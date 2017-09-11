@@ -1,1 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    padding-top: 50px;
+}
+.surveyTile {
+    border: 1px solid lightgray;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+.surveyTile .title {
+    font-size: 18px;;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+}
+.surveyTile .desc {
+    font-size: 13px;
+    color: #aaa;
+}
+.surveyTile .button {
+    float:right;
+}
+.form-survey {
+    padding: 25px;
+    border: 2px solid #eeeeee;
+}
+.create-survey-form {
+    padding: 20px;
+    border: 1px solid #eee;
+}
+.create-survey-form h3 {
+    margin-top:5px;
+}
+.table.table-hover.table-striped {
+    border: 1px solid #ddd;
+}
+.tablerow-div{
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #e0e0e0;
+    padding: 5px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+    text-transform: capitalize;
+}

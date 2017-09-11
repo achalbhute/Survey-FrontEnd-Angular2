@@ -1,0 +1,37 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Survey Portal</a>
+        </div>
+    </div>
+</nav>
+
+<div class="jumbotron">
+    <div class="container">
+        <h1>Survey Portal</h1>
+        <p>Please help us by responding to Survey</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row" *ngFor="let sur of survey; let srI = index" >
+        <div class="col-xs-12 surveyTile">
+            
+             <p class='title'>{{sur.title}}</p>
+            <p class="desc">{{sur.description}}</p>
+            <form (ngSubmit)="onSubmit(setResultForm, srI)" #setResultForm="ngForm" *ngIf="!sur.voiceOpenion" class='form-survey clearfix'>
+                <ng-container *ngFor="let ch of sur.choices | keys">
+                    <input type="radio" name='value' [value]='ch' ngModel> <label for="value">{{ch}}&nbsp;</label>
+                </ng-container>
+                
+                <ng-container *ngIf="!sur.voicedOpenion">
+                    <input type='submit' class="btn btn-primary btn-sm button" value='Commit Opinion »'>
+                </ng-container>
+                <ng-container *ngIf="sur.voicedOpenion">
+                    <input type='submit' class="btn btn-success btn-sm button" value='Committed Opinion' disabled>
+                </ng-container>
+            </form>
+            <button class="btn btn-primary btn-sm button" (click)="setVoice(srI)" *ngIf="sur.voiceOpenion">Voice your Opinion »</button>
+        </div>
+    </div>
+</div>

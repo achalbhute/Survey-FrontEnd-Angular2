@@ -1,0 +1,47 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Survey Portal</a>
+        </div>
+    </div>
+</nav>
+<div class="jumbotron">
+    <div class="container">
+        <h1>Admin</h1>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-8">
+            <table class="table table-hover table-striped">
+                <tr><th>ID</th><th>Title</th><th>Result</th><th>Total</th></tr>
+                <tr *ngFor="let sur of surveyResult; let srI = index">
+                    <td>{{sur.id}}</td>
+                    <td>{{sur.title}}</td>
+                    <td><div *ngFor="let ch of sur.result | keys" class="tablerow-div">{{ch}}: <strong>{{sur.result[ch]}}</strong></div></td>
+                    <td>{{sur.total}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-xs-4">
+            <form (ngSubmit)="addSurvey(addSurveyForm)" #addSurveyForm="ngForm"  class="create-survey-form">
+                <h3>Create Survey</h3>
+                <div class="form-group">
+                    <label for="title">Title:</label> <br>
+                    <input type="text" class="form-control" id="title" required name="title" ngModel>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label> <br>
+                    <textarea class="form-control" id="description" name="description" ngModel></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="choices">choices</label> <br>
+                    <textarea class="form-control" id="choices" name="choices" ngModel></textarea>
+                </div>
+
+                <input type="submit" class="btn btn-success"> <span class="bg-success" *ngIf="formOutp['success']">Successfully Added Survey</span>
+            </form>
+        </div>
+    </div>
+
+</div>

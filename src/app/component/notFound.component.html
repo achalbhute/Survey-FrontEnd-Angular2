@@ -1,0 +1,49 @@
+<style>
+    .value-box {
+        /* border-style: groove; */
+        width: 500px;
+        margin: 0px auto 0px auto;
+       border-radius: 10px;
+       
+    }
+    .value-box .header{
+        padding:10px;
+        border-bottom: 1px solid gray;
+         text-align: center;
+         background: #aaa;
+         color: white;
+         font-weight: 600;
+         font-size:25px;
+         border-top-left-radius: 10px;
+         border-top-right-radius: 10px;
+    }
+    .value-box .values {
+        padding:5px 10px 5px 10px;
+        border:1px solid #aaa;
+        border-top:none;
+        /* cursor: pointer; */
+    }
+    .value-box .values a{
+        display: block;
+        text-decoration: none;
+    }
+    .value-box .values:hover{
+        background: #ddd;
+    }
+    .a {
+        font-size: 500%;
+    }
+</style>
+<div class="container">
+    <div class="a">404</div>
+    <div class="a">State not found</div>
+    <hr>
+    <div class="value-box container">
+        <div class="row header">
+            <div class="col-12-xs">Available States</div>
+        </div>
+        <div class="row values" *ngFor="let state of states">
+            <div class="col-12-xs"><a href="https://www.google.com">{{state}}</a></div>
+        </div>
+    </div>
+</div>
